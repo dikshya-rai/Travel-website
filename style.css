@@ -11,46 +11,6 @@ body {
     line-height: 1.6;
     background-color: #f0f0f0;
 }
-
-
-header {
-    background-color: #004d40;
-    padding: 1rem;
-    display: flex;  /* Added flexbox */
-    justify-content: space-between;  /* Space between logo and nav */
-    align-items: center;
-    
-}
-
-.logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 1rem;
-    display:flex;
-}
-
-header nav ul li a {
-    color: rgb(247, 212, 217);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    display: flex;
-}
-
-header nav ul li a:hover {
-    color: #ff9800;
-}
-
-
 .hero {
     background: url('Travel 2.jpg') no-repeat center center/cover;
     color:ghostwhite;
@@ -145,37 +105,87 @@ header nav ul li a:hover {
     transform: translateY(-10px);
 }
 
-/* Gallery */
+
 .gallery {
-    padding: 4rem 1rem;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.gallery h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #004d40;
-}
-
-.gallery-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
-}
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Each destination block */
+  .destination {
+    flex: 1 1 calc(33.333% - 40px); /* 3 images per row with spacing */
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
 
-.gallery img {
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
+  .destination:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling */
+  .destination img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #34495e;
+    transition: filter 0.3s ease;
+  }
+  
+  .destination:hover img {
+    filter: brightness(0.8);
+  }
+  
+  /* Destination name (title) */
+  .destination h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin: 15px 0 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Description text */
+  .destination p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: #7f8c8d;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .destination {
+      flex: 1 1 calc(50% - 40px); /* 2 images per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .destination {
+      flex: 1 1 100%; /* 1 image per row on small screens */
+    }
+  }
+  
+  /* Add a smooth animation effect */
+  .destination {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  
 /* Testimonials Section */
 .testimonials {
     background: #004d40;
